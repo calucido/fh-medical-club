@@ -19,47 +19,29 @@
   
   {% include head.html %}
   
-  <body>
-    <div class="demo-blog demo-blog--blogpost mdl-layout mdl-js-layout has-drawer is-upgraded">
-      <main class="mdl-layout__content">
-        <div class="demo-blog__posts mdl-grid">
-          <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-            <div class="mdl-card__media mdl-color-text--grey-50">
-              <h3>{{page.title}}</h3>
-            </div>
-            <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-              <div class="minilogo"></div>
-              <div>
-                <strong>{{page.author}}</strong>
-                <span id="timestamp"></span>
-              </div>
-            </div>
-            <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
-              {{content}}
-            </div>
-          </div>
-
-          <nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-            <a href="index.html" class="demo-nav__button">
-              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-              </button>
-              Newer
-            </a>
-            <div class="section-spacer"></div>
-            <a href="index.html" class="demo-nav__button">
-              Older
-              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-              </button>
-            </a>
-          </nav>
+  {% include header.html %}
+  
+  <main class="mdl-layout__content">
+    <div class="demo-blog__posts mdl-grid">
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+        <div class="mdl-card__media mdl-color-text--grey-50">
+          <h3>{{page.title}}</h3>
         </div>
-      </main>
-      <div class="mdl-layout__obfuscator"></div>
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+          <div>
+            <strong>{{page.author}}</strong>
+            <span id="timestamp"></span>
+          </div>
+        </div>
+        <div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+          {{content}}
+        </div>
+      </div>
     </div>
-    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
-    <script>document.querySelector('#timestamp').appendChild(document.createTextNode(moment('{{page.date}}').fromNow()));</script>
-  </body>
+  </main>
+  <div class="mdl-layout__obfuscator"></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+  <script>/* global moment */document.querySelector('#timestamp').appendChild(document.createTextNode(moment('{{page.date}}').fromNow()));</script>
+  {% include end.html %}
 </html>

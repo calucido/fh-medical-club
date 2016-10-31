@@ -19,50 +19,36 @@
   
   {% include head.html %}
   
-  <body>
-    <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
-      <main class="mdl-layout__content">
-        <div class="demo-blog__posts mdl-grid">
-          {% for post in site.posts %}
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-              <div class="mdl-card__media mdl-color-text--grey-50">
-                <div class="home--post--photo__container">
-                  <img class="home--post--photo"
-                      src="{{post.photo}}"
-                      srcset="{{post.photo_2x}} 1672w,
-                        {{post.photo}} 836w,
-                        {{post.photo_half}} 418w"
-                      alt="{{post.title}}" />
-                  <h3 class="home--post--title"><a href="{{ post.url | prepend: site.baseurl }}">{{post.title}}</a></h3>
-                </div>
-              </div>
-              <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
-                <div>
-                  <strong>{{post.post_author}}</strong>
-                  <span>{{ post.date | date: "%b %-d, %Y" }}</span>
-                </div>
-              </div>
+  {% include header.html %}
+  
+  <main class="mdl-layout__content">
+    <div class="demo-blog__posts mdl-grid">
+      {% for post in site.posts %}
+        <div class="mdl-card mdl-cell mdl-cell--12-col">
+          <div class="mdl-card__media mdl-color-text--grey-50">
+            <div class="home--post--photo__container">
+              <a href="{{ post.url | prepend: site.baseurl }}">
+                <img class="home--post--photo"
+                    src="{{post.photo}}"
+                    srcset="{{post.photo_2x}} 1672w,
+                      {{post.photo}} 836w,
+                      {{post.photo_half}} 418w"
+                    alt="{{post.title}}" />
+                <h3 class="home--post--title">{{post.title}}</h3>
+              </a>
             </div>
-          {% endfor %}
+          </div>
+          <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+            <div>
+              <strong>{{post.author}}</strong>
+              <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+            </div>
+          </div>
         </div>
-      </main>
-      <div class="mdl-layout__obfuscator"></div>
+      {% endfor %}
     </div>
-    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-  </body>
-  <script>
-    Array.prototype.forEach.call(document.querySelectorAll('.mdl-card__media'), function(el) {
-      var link = el.querySelector('a');
-      if(!link) {
-        return;
-      }
-      var target = link.getAttribute('href');
-      if(!target) {
-        return;
-      }
-      el.addEventListener('click', function() {
-        location.href = target;
-      });
-    });
-  </script>
+  </main>
+  <div class="mdl-layout__obfuscator"></div>
+  
+  {% include end.html %}
 </html>
