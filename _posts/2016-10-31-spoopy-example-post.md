@@ -2,9 +2,9 @@
 layout: post
 title: Spoopy Example Post
 author: Calvin Lucido
-photo_2x: https://fh-medical-club-clucido.c9users.io/img/2016-10-31-spoopy-example-post.jpg
-photo: https://fh-medical-club-clucido.c9users.io/img/2016-10-31-spoopy-example-post.jpg
-photo_half: https://fh-medical-club-clucido.c9users.io/img/2016-10-31-spoopy-example-post.jpg
+photo_2x: https://calucido.github.io/img/2016-10-31-spoopy-example-post.jpg
+photo: https://calucido.github.io/img/2016-10-31-spoopy-example-post.jpg
+photo_half: https://calucido.github.io/img/2016-10-31-spoopy-example-post.jpg
 ---
     
 # \# Very Spoopy Title
