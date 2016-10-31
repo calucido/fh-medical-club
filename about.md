@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-Dont make me do this either
+Husky Medical Club is a club. For medicine. It exists. Thanks, Erica.
